@@ -16,23 +16,26 @@ export function Square(props: {
     <div
       onClick={onClick}
       style={{
-        width: "30vw",
-        height: "30vw",
-        lineHeight: "30vw",
-        textAlign: "center",
-        fontSize: "20vw",
-        border: "1px solid #000",
-        display: "inline-block",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: "min(4rem, 8vw)",
+        border: "1px solid #e2e8f0",
+        backgroundColor: "white",
+        cursor: "pointer",
+        transition: "background-color 0.2s",
         color: colorful
-          ? "red"
+          ? "#e53e3e"
           : hoverEnabled && hover && value == null
-          ? "#b7b7b7"
-          : "black",
+          ? "#e2e8f0"
+          : "#1a1a1a",
       }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      {value ?? (hoverEnabled && hover ? player : "\u00a0\u00a0")}
+      {value ?? (hoverEnabled && hover ? player : "\u00a0")}
     </div>
   );
 }
